@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>越南四城记 · 河内 / 岘港 / 会安 / 胡志明 · 2026.9.27–10.8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf6ee; --ink:#2e2a26; --ink-soft:#6b6259; --line:#e7ddcd;
+  --hanoi:#b85c3e; --danang:#2f7e8f; --hoian:#c9922e; --saigon:#a05f7c;
+  --accent:#c96f4a; --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans SC",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.75;font-size:15.5px}
+h1,h2,h3,.serif{font-family:"Noto Serif SC",serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+
+/* ── Hero ── */
+.hero{position:relative;padding:88px 22px 64px;text-align:center;color:#fff;
+  background:linear-gradient(160deg,#20343c 0%,#2f5b60 45%,#b85c3e 130%);}
+.hero::after{content:"";position:absolute;inset:0;opacity:.14;pointer-events:none;
+  background-image:radial-gradient(circle at 20% 30%,#e0a458 0 2px,transparent 2px),radial-gradient(circle at 70% 60%,#e0a458 0 2px,transparent 2px),radial-gradient(circle at 45% 80%,#e0a458 0 2px,transparent 2px);
+  background-size:120px 120px,180px 180px,240px 240px}
+.hero .kicker{letter-spacing:.35em;font-size:13px;opacity:.85;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,56px);font-weight:900;margin:14px 0 10px;letter-spacing:.06em}
+.hero .sub{font-size:16px;opacity:.92}
+.route-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;
+  padding:8px 18px;font-size:14px;backdrop-filter:blur(4px)}
+.pill b{font-size:15px}
+.pill .arrow{opacity:.6;margin:0 2px}
+
+/* ── Nav ── */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,246,238,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 12px}
+nav a{flex:0 0 auto;padding:14px 16px;font-size:14px;color:var(--ink-soft);border-bottom:2.5px solid transparent;transition:.2s}
+nav a:hover{color:var(--ink)}
+nav a.active{color:var(--accent);border-color:var(--accent);font-weight:700}
+
+/* ── Sections ── */
+section{padding:56px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.sec-head .no{font-family:"Noto Serif SC",serif;font-size:15px;font-weight:700;color:#fff;
+  background:var(--accent);border-radius:8px;padding:2px 10px}
+.sec-head h2{font-size:clamp(24px,4vw,32px);font-weight:900;letter-spacing:.04em}
+.sec-desc{color:var(--ink-soft);margin-bottom:26px}
+
+/* ── Cards ── */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;
+  margin-bottom:18px;box-shadow:0 2px 10px rgba(60,45,25,.05);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(60,45,25,.09)}
+.card .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;border-radius:6px;
+  padding:2px 9px;margin-bottom:10px;color:#fff}
+.card h3{font-size:19px;margin-bottom:4px}
+.card .meta{color:var(--ink-soft);font-size:14px;margin-bottom:12px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14.5px}
+.kv dt{color:var(--ink-soft);white-space:nowrap}
+.kv dd{margin:0}
+.booked{font-size:12px;font-weight:700;color:#3d7a4e;background:#e8f3ea;border-radius:6px;padding:2px 9px;margin-left:8px;vertical-align:2px}
+.book{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);border:1px solid var(--accent);
+  border-radius:999px;padding:1px 10px;margin-left:8px;vertical-align:2px;white-space:nowrap;transition:.15s}
+.book:hover{background:var(--accent);color:#fff}
+
+/* ── Flight tickets ── */
+.ticket{position:relative;overflow:hidden}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:22px;height:22px;border-radius:50%;
+  background:var(--paper);border:1px solid var(--line)}
+.ticket::before{left:-12px}.ticket::after{right:-12px}
+.flight-route{display:flex;align-items:center;gap:14px;font-family:"Noto Serif SC",serif;
+  font-size:22px;font-weight:700;margin:6px 0 12px}
+.flight-route .plane{flex:1;text-align:center;color:var(--ink-soft);font-size:14px;font-family:"Noto Sans SC";
+  border-top:2px dashed var(--line);padding-top:6px}
+.warn{background:#fdf3e4;border:1px solid #ecd3a8;border-radius:12px;padding:14px 18px;font-size:14px;margin-top:6px}
+
+/* ── City day timeline ── */
+.city-band{border-radius:16px;color:#fff;padding:26px 28px;margin:34px 0 22px;position:relative;overflow:hidden}
+.city-band::after{content:attr(data-watermark);position:absolute;right:10px;bottom:-28px;
+  font-family:"Noto Serif SC",serif;font-size:110px;font-weight:900;opacity:.12;line-height:1}
+.city-band h2{font-size:clamp(24px,4vw,30px);font-weight:900}
+.city-band p{opacity:.9;font-size:14.5px}
+.band-hanoi{background:linear-gradient(135deg,#a04c31,#c97a52)}
+.band-danang{background:linear-gradient(135deg,#236572,#3f97a6)}
+.band-hoian{background:linear-gradient(135deg,#a97a1e,#d9ab4a)}
+.band-saigon{background:linear-gradient(135deg,#8a4c66,#bd7f96)}
+
+.day{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:20px;overflow:hidden}
+.day-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:16px 24px;
+  border-bottom:1px dashed var(--line);background:#fffdf8}
+.day-head .d{font-family:"Noto Serif SC",serif;font-weight:900;font-size:20px;color:#fff;
+  width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.day-head .t{font-weight:700;font-size:16.5px}
+.day-head .base{margin-left:auto;font-size:12.5px;color:var(--ink-soft)}
+.day-body{display:grid;grid-template-columns:minmax(0,1fr) 300px}
+.timeline{list-style:none;padding:10px 24px 18px}
+.timeline li{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:9px 0;position:relative}
+.timeline li:not(:last-child)::before{content:"";position:absolute;left:70px;top:34px;bottom:-8px;width:2px;background:var(--line)}
+.timeline .time{font-weight:700;font-size:13.5px;color:var(--ink-soft);text-align:right;padding-top:2px;font-variant-numeric:tabular-nums}
+.timeline .what{font-weight:600}
+.timeline .note{display:block;font-weight:400;font-size:13.5px;color:var(--ink-soft)}
+.new{font-size:11px;font-weight:700;color:#fff;background:#d45d79;border-radius:5px;padding:1px 7px;margin-left:7px;vertical-align:2px;letter-spacing:.05em}
+.hl-hanoi{color:var(--hanoi)} .hl-danang{color:var(--danang)} .hl-hoian{color:var(--hoian)} .hl-saigon{color:var(--saigon)}
+.bg-hanoi{background:var(--hanoi)} .bg-danang{background:var(--danang)} .bg-hoian{background:var(--hoian)} .bg-saigon{background:var(--saigon)}
+.tip{margin:14px 24px 18px;background:#f3f7f4;border-left:4px solid #7fa88f;border-radius:0 10px 10px 0;
+  padding:10px 16px;font-size:13.5px;color:#4c5a50}
+.tip.amber{background:#fdf3e4;border-color:var(--hoian);color:#6d5a2e}
+
+/* ── Per-day map sidebar ── */
+.day-map{border-left:1px dashed var(--line);background:#fffdf8;padding:16px;display:flex;flex-direction:column;gap:10px}
+.day-map .map-title{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--ink-soft)}
+.day-map iframe{width:100%;flex:1;min-height:260px;border:0;border-radius:12px;background:#e9e2d5}
+.map-open{display:block;font-size:12.5px;font-weight:700;color:var(--accent);border:1.5px solid var(--accent);
+  border-radius:999px;padding:6px 12px;text-align:center;transition:.15s}
+.map-open:hover{background:var(--accent);color:#fff}
+@media (max-width:820px){
+  .day-body{grid-template-columns:1fr}
+  .day-map{border-left:none;border-top:1px dashed var(--line)}
+  .day-map iframe{min-height:230px}
+}
+
+/* ── Reminders ── */
+.remind-grid{display:grid;gap:14px}
+.remind{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+.remind h3{font-size:16px;margin-bottom:6px}
+.remind p{font-size:14.5px;color:var(--ink-soft)}
+footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-soft);font-size:13px;border-top:1px solid var(--line)}
+@media (max-width:600px){
+  .timeline li{grid-template-columns:52px 1fr;gap:10px}
+  .timeline li:not(:last-child)::before{left:57px}
+  .kv{grid-template-columns:1fr}
+  .kv dt{margin-top:6px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Vietnam · North to South</div>
+  <h1>越南四城记</h1>
+  <div class="sub">2026.9.27 – 10.8 · 12 天 · 两人同行 · 每天 10:00 后出发</div>
+  <div class="route-pills">
+    <span class="pill"><b>河内</b> 9.27–9.30</span>
+    <span class="pill arrow">→</span>
+    <span class="pill"><b>岘港</b> 9.30–10.4</span>
+    <span class="pill arrow">→</span>
+    <span class="pill"><b>会安</b> 10.4–10.5</span>
+    <span class="pill arrow">→</span>
+    <span class="pill"><b>胡志明</b> 10.5–10.8</span>
+  </div>
+  <p style="margin-top:26px;font-size:14.5px;opacity:.85;max-width:640px;margin-left:auto;margin-right:auto">
+    整条路线由北向南：先在河内逛老城与法式街区，飞岘港度假酒店躺平 + 巴拿山金桥一日游，
+    再去会安住一晚看灯笼夜景，最后飞胡志明第一郡逛街购物。节奏前紧后松，城市观光与海边度假兼顾。
+  </p>
+</header>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#hotels">酒店清单</a>
+    <a href="#flights">国内航班</a>
+    <a href="#hanoi">河内</a>
+    <a href="#danang">岘港</a>
+    <a href="#hoian">会安</a>
+    <a href="#saigon">胡志明</a>
+    <a href="#tips">关键提醒</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ═══════ 酒店 ═══════ -->
+<section id="hotels">
+  <div class="sec-head"><span class="no">宿</span><h2>已订酒店清单</h2></div>
+  <p class="sec-desc">来自预订订单截图 · 均支持免费取消</p>
+
+  <div class="card">
+    <span class="tag" style="background:var(--hanoi)">河内 · 老城区/法国区交界</span>
+    <h3>Embrace Boutique Hanoi Hotel<span class="booked">✓ 已订</span></h3>
+    <dl class="kv">
+      <dt>入住</dt><dd>9.27 – 9.30（3 晚）</dd>
+      <dt>总价</dt><dd>1238 元 · 免费取消</dd>
+      <dt>位置</dt><dd>距还剑湖步行约 10 分钟，全房型有窗、含早</dd>
+    </dl>
+  </div>
+
+  <div class="card">
+    <span class="tag" style="background:var(--danang)">岘港 · 度假别墅</span>
+    <h3>Fusion Resort &amp; Villas Da Nang<span class="booked">✓ 已订</span></h3>
+    <dl class="kv">
+      <dt>入住</dt><dd>9.30 – 10.4（4 晚）</dd>
+      <dt>总价</dt><dd>5225 元 · 免费取消</dd>
+      <dt>特色</dt><dd>Wellness Inclusive 全包式，含水疗，海滩度假</dd>
+    </dl>
+  </div>
+
+  <div class="card">
+    <span class="tag" style="background:var(--hoian)">会安 · Cam Pho 区</span>
+    <h3>Hoi An TNT Villa 会安 TNT 别墅<span class="booked">✓ 已订</span></h3>
+    <dl class="kv">
+      <dt>地址</dt><dd>100 Trần Hưng Đạo, Cam Pho, Hoi An</dd>
+      <dt>入住</dt><dd>10.4 – 10.5（1 晚）· 14:00 后入住 / 12:00 前退房</dd>
+      <dt>房型</dt><dd>高端豪华双人/双床房 30㎡，含 2 份早餐，免费自行车</dd>
+      <dt>位置</dt><dd>步行约 10 分钟到会安古城，街区安静</dd>
+    </dl>
+  </div>
+
+  <div class="card">
+    <span class="tag" style="background:var(--saigon)">胡志明 · 第一郡</span>
+    <h3>Ekomo Home 95 - Metro Ben Thanh<span class="booked">✓ 已订</span></h3>
+    <dl class="kv">
+      <dt>入住</dt><dd>10.5 – 10.8（3 晚）</dd>
+      <dt>总价</dt><dd>912 元 · 免费取消</dd>
+      <dt>位置</dt><dd>距滨城市场 800 米，带阳台，逛街采购方便</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ═══════ 航班 ═══════ -->
+<section id="flights">
+  <div class="sec-head"><span class="no">飞</span><h2>越南国内航班</h2></div>
+  <p class="sec-desc">越南航空 Vietnam Airlines · 两段均已出票 · 经济舱含免费托运行李</p>
+
+  <div class="card ticket">
+    <span class="tag" style="background:var(--ink)">已出票 · 订单号与 PIN 码见航司 App（未在公开版展示）</span>
+    <div class="flight-route">
+      <span>河内 HAN</span>
+      <span class="plane">✈ VN0173 · 约 1h25m</span>
+      <span>岘港 DAD</span>
+    </div>
+    <dl class="kv">
+      <dt>日期</dt><dd>9 月 30 日（周三）· 14:35 起飞 – 16:00 落地</dd>
+      <dt>舱位</dt><dd>经济舱 ✅ 含 23kg 免费托运行李</dd>
+      <dt>乘客</dt><dd>2 人</dd>
+      <dt>衔接</dt><dd>河内 12:00 退房 → 13:00 到机场 → 14:35 飞 → 16:00 落地 → 16:30 到 Fusion（15:00 后可入住）</dd>
+    </dl>
+  </div>
+
+  <div class="card ticket">
+    <span class="tag" style="background:var(--ink)">已出票 · 订单号与预订编号见航司 App（未在公开版展示）</span>
+    <div class="flight-route">
+      <span>岘港 DAD</span>
+      <span class="plane">✈ VN6037 · 约 1h35m</span>
+      <span>胡志明 SGN</span>
+    </div>
+    <dl class="kv">
+      <dt>日期</dt><dd>10 月 5 日（周一）· 13:50 起飞 – 15:25 落地</dd>
+      <dt>舱位</dt><dd>经济舱 ✅ 含免费托运行李</dd>
+      <dt>乘客</dt><dd>2 人</dd>
+      <dt>衔接</dt><dd>会安 11:00 退房 → 11:15 出发 → 约 12:00 到岘港机场 → 13:50 飞 → 15:25 落地 → 16:30 到 Ekomo（14:00 后可入住）</dd>
+    </dl>
+  </div>
+
+  <div class="warn">⚠️ 两段均为越南航空国内线，外籍旅客值机多需柜台人工办理，务必出示<b>护照原件</b>（带越南入境章），订票姓名须与护照英文完全一致；建议提前 <b>1.5–2 小时</b>到机场。管理订单 / 网上值机：<a href="https://www.vietnamairlines.com" target="_blank" rel="noopener">vietnamairlines.com</a></div>
+</section>
+
+<!-- ═══════ 河内 ═══════ -->
+<section id="hanoi">
+  <div class="city-band band-hanoi" data-watermark="河">
+    <h2>河内 · 9/27 – 9/30</h2>
+    <p>老城 + 法式街区 · 基地：Embrace Boutique Hanoi</p>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-hanoi">D1</span><span class="t">9月27日 · 周日 · 抵达 + 老城夜市</span>
+      <span class="base">宿 Embrace Boutique Hanoi</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">15:00</span><span class="what">落地内排机场，入境 + 取行李<span class="note">约 50 分钟</span></span></li>
+        <li><span class="time">15:50</span><span class="what">Grab 前往 Embrace Boutique Hanoi<span class="note">车程约 35–45 分钟，约 25–35 万盾（≈80–110 元）</span></span></li>
+        <li><span class="time">16:35</span><span class="what">办理入住、放行李<span class="note">法国区/老城交界，距还剑湖步行约 10 分钟</span></span></li>
+        <li><span class="time">17:10</span><span class="what">还剑湖环湖散步<span class="note">从酒店步行约 10 分钟，傍晚光线最好</span></span></li>
+        <li><span class="time">18:00</span><span class="what">三十六行街闲逛<span class="note">老街巷弄，街边晚餐</span></span></li>
+        <li><span class="time">20:00</span><span class="what hl-hanoi">老城周末夜市 + 还剑湖步行街<span class="note">周日恰逢夜市 18:00–23:00</span></span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D1 路线地图"
+          src="https://maps.google.com/maps?saddr=Embrace+Boutique+Hotel+Hanoi&daddr=Hoan+Kiem+Lake+to:Hanoi+Old+Quarter+Night+Market&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Hanoi+Old+Quarter+Night+Market&waypoints=Hoan+Kiem+Lake&travelmode=walking">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-hanoi">D2</span><span class="t">9月28日 · 周一 · 城市人文线</span>
+      <span class="base">宿 Embrace Boutique Hanoi</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">09:00</span><span class="what">睡到自然醒，酒店早餐<span class="note">Embrace 含欧式早餐</span></span></li>
+        <li><span class="time">10:00</span><span class="what">火车街 Train Street<span class="note">拍照 + 轨道边咖啡约 1 小时</span></span></li>
+        <li><span class="time">11:15</span><span class="what">西湖 · 镇国寺<span class="note">车程约 15 分钟</span></span></li>
+        <li><span class="time">12:30</span><span class="what">午餐<span class="note">西湖周边或老城</span></span></li>
+        <li><span class="time">14:00</span><span class="what">火炉监狱博物馆<a class="book" href="https://hoalo.vn" target="_blank" rel="noopener">官网 hoalo.vn</a><span class="note">8:00–17:00，约 3 万盾，约 1.5 小时；门票现场购买</span></span></li>
+        <li><span class="time">16:00</span><span class="what">巴亭广场 + 独柱寺外观<span class="note">胡志明陵墓维护闭馆，仅外观</span></span></li>
+        <li><span class="time">17:30</span><span class="what">升龙水上木偶剧院取票<span class="note">提前 20–30 分钟到</span></span></li>
+        <li><span class="time">18:30</span><span class="what hl-hanoi">水上木偶戏<a class="book" href="https://www.klook.com/zh-CN/search/result/?query=thang%20long%20water%20puppet" target="_blank" rel="noopener">Klook 订票</a><span class="note">约 50 分钟，现场票 10–20 万盾（≈30–60 元）；热门场次建议提前 1 天网上订或电话 024 3824 9494 订座</span></span></li>
+        <li><span class="time">19:30</span><span class="what">晚餐</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D2 路线地图"
+          src="https://maps.google.com/maps?saddr=Embrace+Boutique+Hotel+Hanoi&daddr=Hanoi+Train+Street+to:Tran+Quoc+Pagoda+to:Hoa+Lo+Prison+to:Ba+Dinh+Square+to:Thang+Long+Water+Puppet+Theatre&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Thang+Long+Water+Puppet+Theatre&waypoints=Hanoi+Train+Street%7CTran+Quoc+Pagoda%7CHoa+Lo+Prison%7CBa+Dinh+Square">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+    <div class="tip">💡 火车街咖啡馆近年屡次被整治关停，若当天进不去，改为在街口远眺拍照 + 附近咖啡馆即可。</div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-hanoi">D3</span><span class="t">9月29日 · 周二 · 深度市区 + 大教堂</span>
+      <span class="base">宿 Embrace Boutique Hanoi</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">09:00</span><span class="what">睡到自然醒，早餐</span></li>
+        <li><span class="time">10:00</span><span class="what">文庙 Temple of Literature<span class="note">约 3 万盾，现场购票，逛约 1.5 小时</span></span></li>
+        <li><span class="time">11:30</span><span class="what hl-hanoi">圣约瑟夫大教堂（河内大教堂）<span class="new">小红书热门</span><span class="note">河内最古老教堂，新哥特式外观出片，免费参观，距老城步行可达</span></span></li>
+        <li><span class="time">12:30</span><span class="what">午餐<span class="note">教堂周边老城巷弄</span></span></li>
+        <li><span class="time">14:00</span><span class="what">胡志明博物馆 / 历史博物馆<span class="note">周二开放，二选一</span></span></li>
+        <li><span class="time">15:30</span><span class="what">三十六行街购物 + 咖啡馆<span class="note">推荐鸡蛋咖啡 Cafe Giảng，小红书高频推荐</span></span></li>
+        <li><span class="time">17:15</span><span class="what hl-hanoi">龙编桥 Long Bien Bridge 看日落<span class="note">红河百年铁桥，日落最出片</span></span></li>
+        <li><span class="time">19:00</span><span class="what">晚餐：炙鱼脍（Chả Cá）<span class="note">河内特色，人均约 40–70 元</span></span></li>
+        <li><span class="time">20:30</span><span class="what">回酒店收拾行李<span class="note">次日飞岘港</span></span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D3 路线地图"
+          src="https://maps.google.com/maps?saddr=Embrace+Boutique+Hotel+Hanoi&daddr=Temple+of+Literature+Hanoi+to:St.+Joseph+Cathedral+Hanoi+to:Vietnam+National+Museum+of+History+to:Long+Bien+Bridge&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Long+Bien+Bridge&waypoints=Temple+of+Literature+Hanoi%7CSt.+Joseph+Cathedral+Hanoi%7CVietnam+National+Museum+of+History">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-hanoi">D4</span><span class="t">9月30日 · 周三 · 河内 → 岘港</span>
+      <span class="base">Embrace → Fusion Resort</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">08:30</span><span class="what">早餐，收拾行李</span></li>
+        <li><span class="time">10:00</span><span class="what">还剑湖最后一圈 / 酒店附近咖啡馆<span class="note">退房前轻松消磨，不赶时间</span></span></li>
+        <li><span class="time">12:00</span><span class="what">Embrace 酒店准时退房<span class="note">酒店标准退房时间 12:00 前</span></span></li>
+        <li><span class="time">12:10</span><span class="what">Grab 前往内排机场<span class="note">老城 → 机场车程约 40–50 分钟</span></span></li>
+        <li><span class="time">13:00</span><span class="what">抵达内排机场，柜台值机 + 托运行李<span class="note">外籍旅客多需柜台人工办理，出示护照原件；含 23kg 免费托运</span></span></li>
+        <li><span class="time">14:35</span><span class="what hl-hanoi">✈️ VN0173 河内 → 岘港<span class="note">越南航空，飞行约 1h25m，已出票，含 23kg 托运</span></span></li>
+        <li><span class="time">16:00</span><span class="what">落地岘港 DAD 机场，取托运行李</span></li>
+        <li><span class="time">16:30</span><span class="what">抵达 Fusion Resort 办理入住<span class="note">机场 → 酒店约 20–30 分钟；15:00 后可入住，房间未好可先寄存行李</span></span></li>
+        <li><span class="time">17:00</span><span class="what">酒店泳池 / 水疗放松</span></li>
+        <li><span class="time">18:00</span><span class="what">美溪沙滩看日落<span class="note">福布斯全球六大最美海滩之一</span></span></li>
+        <li><span class="time">19:30</span><span class="what">海鲜晚餐</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线（落地段）</span>
+        <iframe loading="lazy" title="D4 路线地图"
+          src="https://maps.google.com/maps?saddr=Da+Nang+International+Airport&daddr=Fusion+Resort+Villas+Da+Nang+to:My+Khe+Beach&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Noi+Bai+International+Airport">上午送机段：酒店 → 内排机场 ↗</a>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Da+Nang+International+Airport&destination=My+Khe+Beach&waypoints=Fusion+Resort+Villas+Da+Nang">落地段：岘港机场 → Fusion → 美溪沙滩 ↗</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 岘港 ═══════ -->
+<section id="danang">
+  <div class="city-band band-danang" data-watermark="岘">
+    <h2>岘港 · 9/30 – 10/4</h2>
+    <p>海边度假 · 基地：Fusion Resort &amp; Villas Da Nang</p>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-danang">D5</span><span class="t">10月1日 · 周四 · 山茶半岛 + 市区</span>
+      <span class="base">宿 Fusion Resort Da Nang</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">09:30</span><span class="what">睡到自然醒，早餐<span class="note">Wellness 全包</span></span></li>
+        <li><span class="time">10:00</span><span class="what hl-danang">山茶半岛 · 灵应寺<span class="note">海上观音像，车程约 30 分钟</span></span></li>
+        <li><span class="time">12:30</span><span class="what">岘港市区午餐</span></li>
+        <li><span class="time">14:00</span><span class="what">龙桥 + 粉红教堂<span class="note">打卡地标建筑</span></span></li>
+        <li><span class="time">17:00</span><span class="what">返回酒店休整</span></li>
+        <li><span class="time">19:00</span><span class="what">晚餐，海边散步</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D5 路线地图"
+          src="https://maps.google.com/maps?saddr=Fusion+Resort+Villas+Da+Nang&daddr=Linh+Ung+Pagoda+Da+Nang+to:Dragon+Bridge+Da+Nang+to:Da+Nang+Cathedral&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Da+Nang+Cathedral&waypoints=Linh+Ung+Pagoda+Da+Nang%7CDragon+Bridge+Da+Nang">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-danang">D6</span><span class="t">10月2日 · 周五 · 巴拿山金桥一日游</span>
+      <span class="base">宿 Fusion Resort Da Nang</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">09:00</span><span class="what">睡到自然醒，早餐</span></li>
+        <li><span class="time">10:00</span><span class="what">出发前往巴拿山 Ba Na Hills<span class="note">车程约 45–60 分钟；官网 2026/8 起有市区免费穿梭巴士可查询</span></span></li>
+        <li><span class="time">11:00</span><span class="what hl-danang">缆车上山，打卡金桥 Golden Bridge<span class="note">巨手托桥；中午旅行团在用餐，人反而少；想拍晨雾空镜可自行提前出发</span></span></li>
+        <li><span class="time">12:30</span><span class="what">山上午餐<span class="note">可选自助餐套票或法国村餐厅</span></span></li>
+        <li><span class="time">14:00</span><span class="what">法国村 French Village 闲逛<span class="note">法式城堡建筑群、教堂广场、街头表演</span></span></li>
+        <li><span class="time">15:30</span><span class="what">Fantasy Park 室内游乐园 / 酒窖 + 花园<span class="note">下雨也不受影响，适合午后机动</span></span></li>
+        <li><span class="time">17:00</span><span class="what">缆车下山，返回岘港</span></li>
+        <li><span class="time">18:30</span><span class="what">酒店休整，海边晚餐</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D6 路线地图"
+          src="https://maps.google.com/maps?saddr=Fusion+Resort+Villas+Da+Nang&daddr=Sun+World+Ba+Na+Hills&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Sun+World+Ba+Na+Hills">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+    <div class="tip">🌧️ 山上比市区凉 5–8°C 且多雾，带件薄外套；门票 + 缆车联票约 90–100 万盾/人，建议提前网上购买（扫码入园免排队）：<a class="book" href="https://sunworld.vn/en/banahills" target="_blank" rel="noopener">官网 sunworld.vn</a> <a class="book" href="https://www.klook.com/zh-CN/activity/13283-ba-na-hills-ticket-da-nang/" target="_blank" rel="noopener">Klook 中文订票</a></div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-danang">D7</span><span class="t">10月3日 · 周六 · 酒店放松日 + 龙桥喷火秀</span>
+      <span class="base">宿 Fusion Resort Da Nang</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">10:00</span><span class="what">睡到自然醒，酒店早午餐</span></li>
+        <li><span class="time">11:00</span><span class="what hl-danang">SPA / 泳池 / 瑜伽<span class="note">Wellness Inclusive 全包体验</span></span></li>
+        <li><span class="time">14:00</span><span class="what">美溪沙滩散步、海边咖啡</span></li>
+        <li><span class="time">18:00</span><span class="what">海边日落，晚餐</span></li>
+        <li><span class="time">20:30</span><span class="what hl-danang">出发看龙桥喷火秀<span class="new">小红书热门</span><span class="note">每周五/六/日 21:00 喷火 + 喷水约 15 分钟，免费；今天恰逢周六，提前 20–30 分钟到桥边占位，30 米外可感受火焰热度</span></span></li>
+        <li><span class="time">21:30</span><span class="what">返回酒店休息</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D7 路线地图"
+          src="https://maps.google.com/maps?saddr=Fusion+Resort+Villas+Da+Nang&daddr=My+Khe+Beach+to:Dragon+Bridge+Da+Nang&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Dragon+Bridge+Da+Nang&waypoints=My+Khe+Beach">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+    <div class="tip">🌧️ 雨季备案：若遇午后阵雨，今天就是天然的"室内日"——SPA、酒店下午茶、岘港市区占族博物馆都可机动补位。</div>
+  </div>
+</section>
+
+<!-- ═══════ 会安 ═══════ -->
+<section id="hoian">
+  <div class="city-band band-hoian" data-watermark="会">
+    <h2>会安 · 10/4 – 10/5</h2>
+    <p>灯笼古镇 · 基地：Hoi An TNT Villa</p>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-hoian">D8</span><span class="t">10月4日 · 周日 · 岘港 → 会安 · 椰子船</span>
+      <span class="base">Fusion → Hoi An TNT Villa</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">09:30</span><span class="what">早餐，收拾行李</span></li>
+        <li><span class="time">10:00</span><span class="what">Fusion 酒店退房，Grab 前往会安<span class="note">车程约 40 分钟</span></span></li>
+        <li><span class="time">10:45</span><span class="what">抵达 Hoi An TNT Villa，寄存行李<span class="note">酒店 14:00 后入住，未到时间可免费寄存</span></span></li>
+        <li><span class="time">11:00</span><span class="what hl-hoian">椰子林竹篮船（Cam Thanh 七亩椰林）<span class="new">小红书热门</span><a class="book" href="https://www.klook.cn/zh-CN/activity/24274-basket-boat-ticket-hoi-an-coconut-forest/" target="_blank" rel="noopener">Klook 订票</a><span class="note">古城打车约 15 分钟；圆形簸箕船穿梭椰林水道 + 旋转船表演，约 1–1.5 小时；Klook 上 20 万+ 人订过</span></span></li>
+        <li><span class="time">13:00</span><span class="what">会安午餐<span class="note">白玫瑰、高捞面、炸馄饨</span></span></li>
+        <li><span class="time">14:00</span><span class="what">回 TNT Villa 办理入住、放行李<span class="note">高端豪华房 30㎡，含双早，可免费租自行车</span></span></li>
+        <li><span class="time">15:30</span><span class="what">古城打卡：日本来远桥、福建会馆、老民居、手作店<span class="note">古城通票约 12 万盾，在古城入口售票亭现场购买</span></span></li>
+        <li><span class="time">17:30</span><span class="what">秋盆河边咖啡馆看日落</span></li>
+        <li><span class="time">18:30</span><span class="what hl-hoian">古城夜市 + 灯笼街，逛吃</span></li>
+        <li><span class="time">20:00</span><span class="what">可选放河灯，步行返回 TNT Villa 休息</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D8 路线地图"
+          src="https://maps.google.com/maps?saddr=Fusion+Resort+Villas+Da+Nang&daddr=Hoi+An+TNT+Villa+to:Bay+Mau+Coconut+Forest+to:Hoi+An+Ancient+Town&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Hoi+An+Ancient+Town&waypoints=Hoi+An+TNT+Villa%7CBay+Mau+Coconut+Forest">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-hoian">D9</span><span class="t">10月5日 · 周一 · 会安 → 胡志明</span>
+      <span class="base">TNT Villa → Ekomo Home 95</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">08:30</span><span class="what">TNT Villa 早餐<span class="note">订单含 2 份早餐；今天赶飞机，是唯一需要早起的一天</span></span></li>
+        <li><span class="time">09:30</span><span class="what">会安周边闲逛 / 免费自行车骑行<span class="note">清晨无人的古城最适合拍照</span></span></li>
+        <li><span class="time">10:30</span><span class="what">返回酒店收拾行李</span></li>
+        <li><span class="time">11:00</span><span class="what hl-hoian">TNT Villa 退房，Grab 出发前往岘港机场<span class="note">会安 → 岘港机场车程约 40–50 分钟，旺季留足余量</span></span></li>
+        <li><span class="time">12:00</span><span class="what">抵达岘港 DAD 机场，柜台值机 + 托运行李<span class="note">起飞前约 1 小时 50 分到达；出示护照原件，含免费托运</span></span></li>
+        <li><span class="time">13:50</span><span class="what hl-hoian">✈️ VN6037 岘港 → 胡志明<span class="note">越南航空，飞行约 1h35m，已出票</span></span></li>
+        <li><span class="time">15:25</span><span class="what">落地新山一 SGN 机场，取托运行李</span></li>
+        <li><span class="time">16:00</span><span class="what">Grab 前往 Ekomo Home 95<span class="note">机场 → 第一郡车程约 30–45 分钟</span></span></li>
+        <li><span class="time">16:40</span><span class="what">办理入住、放行李、休整<span class="note">Ekomo 14:00 后可入住</span></span></li>
+        <li><span class="time">17:30</span><span class="what">滨城市场逛场<span class="note">伴手礼、咖啡、手信，距酒店步行约 10 分钟</span></span></li>
+        <li><span class="time">19:00</span><span class="what">阮惠步行街 + 咖啡公寓打卡</span></li>
+        <li><span class="time">20:30</span><span class="what">滨城夜市 / 范五老街<span class="note">人多注意防扒</span></span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线（落地段）</span>
+        <iframe loading="lazy" title="D9 路线地图"
+          src="https://maps.google.com/maps?saddr=Tan+Son+Nhat+International+Airport&daddr=Ben+Thanh+Market+to:Nguyen+Hue+Walking+Street&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Hoi+An+TNT+Villa&destination=Da+Nang+International+Airport">上午段：会安 → 岘港机场 ↗</a>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Tan+Son+Nhat+International+Airport&destination=Nguyen+Hue+Walking+Street&waypoints=Ben+Thanh+Market">落地段：新山一机场 → 滨城市场 → 阮惠步行街 ↗</a>
+      </aside>
+    </div>
+    <div class="tip amber">⏰ 注意：国内线外籍旅客需柜台人工值机，原计划 13:00 到机场只留 50 分钟太紧，已调整为 <b>11:00 退房、11:15 出发、约 12:00 到机场</b>。</div>
+  </div>
+</section>
+
+<!-- ═══════ 胡志明 ═══════ -->
+<section id="saigon">
+  <div class="city-band band-saigon" data-watermark="志">
+    <h2>胡志明 · 10/5 – 10/8</h2>
+    <p>第一郡逛街购物 · 基地：Ekomo Home 95</p>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-saigon">D10</span><span class="t">10月6日 · 周二 · 战争遗迹 + 法式街区</span>
+      <span class="base">宿 Ekomo Home 95</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">09:00</span><span class="what">睡到自然醒，早餐<span class="note">街边河粉 / 法棍</span></span></li>
+        <li><span class="time">10:00</span><span class="what hl-saigon">战争遗迹博物馆<span class="new">小红书热门</span><span class="note">越南最具分量的博物馆，约 1.5 小时；门票约 4 万盾现场购买，7:30–17:30</span></span></li>
+        <li><span class="time">11:45</span><span class="what">午餐</span></li>
+        <li><span class="time">13:00</span><span class="what">中央邮局 + 阮文平书街<span class="note">写明信片、文创</span></span></li>
+        <li><span class="time">14:30</span><span class="what">胡志明美术馆<span class="note">黄墙法式洋楼，拍照 + 艺术商店，8:00–17:00</span></span></li>
+        <li><span class="time">16:30</span><span class="what hl-saigon">粉红教堂（新定教堂）+ 周边买手街区<span class="note">DATT、Moxi 等越南设计师品牌、奥黛；傍午光线拍照最佳</span></span></li>
+        <li><span class="time">18:00</span><span class="what">西贡歌剧院打卡</span></li>
+        <li><span class="time">18:30</span><span class="what">晚餐</span></li>
+        <li><span class="time">19:30</span><span class="what">范五老街散步、逛小店</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D10 路线地图"
+          src="https://maps.google.com/maps?saddr=Ben+Thanh+Market&daddr=War+Remnants+Museum+to:Saigon+Central+Post+Office+to:Ho+Chi+Minh+City+Museum+of+Fine+Arts+to:Tan+Dinh+Church+to:Saigon+Opera+House&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Saigon+Opera+House&waypoints=War+Remnants+Museum%7CSaigon+Central+Post+Office%7CHo+Chi+Minh+City+Museum+of+Fine+Arts%7CTan+Dinh+Church&travelmode=walking">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-saigon">D11</span><span class="t">10月7日 · 周三 · 自由逛街 + 补货</span>
+      <span class="base">宿 Ekomo Home 95</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">10:00</span><span class="what">睡到自然醒，早午餐</span></li>
+        <li><span class="time">11:00</span><span class="what">自选：黎利路手作店 / 安东市场<span class="note">安东市场本地批发，咖啡香料伴手礼性价比高</span></span></li>
+        <li><span class="time">13:00</span><span class="what">午餐</span></li>
+        <li><span class="time">14:30</span><span class="what">越式 SPA / 洗头按摩<span class="note">休整</span></span></li>
+        <li><span class="time">16:30</span><span class="what">Bitexco 金融塔观景台（可选）<a class="book" href="https://www.saigonskydeck.com" target="_blank" rel="noopener">官网订票</a><span class="note">俯瞰城市日落，约 21:30 关；网上购票通常比现场便宜；也可改去越南最高楼 Landmark 81 观景台</span></span></li>
+        <li><span class="time">18:30</span><span class="what">晚餐，最后一轮补货</span></li>
+        <li><span class="time">20:30</span><span class="what">回酒店整理行李</span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D11 路线地图"
+          src="https://maps.google.com/maps?saddr=Ben+Thanh+Market&daddr=An+Dong+Market+to:Bitexco+Financial+Tower&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Bitexco+Financial+Tower&waypoints=An+Dong+Market">在 Google 地图打开当日路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+
+  <div class="day">
+    <div class="day-head">
+      <span class="d bg-saigon">D12</span><span class="t">10月8日 · 周四 · 返程</span>
+      <span class="base">Ekomo Home 95 → 机场</span>
+    </div>
+    <div class="day-body">
+      <ul class="timeline">
+        <li><span class="time">08:30</span><span class="what">早餐、退房、行李寄存</span></li>
+        <li><span class="time">10:00</span><span class="what">滨城市场晨逛 / 补买伴手礼<span class="note">第一郡最后一圈，或市场补货</span></span></li>
+        <li><span class="time">按航班</span><span class="what hl-saigon">倒推出发时间<span class="note">国际航班提前 3 小时到机场，车程 30–45 分钟</span></span></li>
+      </ul>
+      <aside class="day-map">
+        <span class="map-title">🗺️ 当日路线</span>
+        <iframe loading="lazy" title="D12 路线地图"
+          src="https://maps.google.com/maps?saddr=Ben+Thanh+Market&daddr=Tan+Son+Nhat+International+Airport&hl=zh-CN&output=embed"></iframe>
+        <a class="map-open" target="_blank" rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Tan+Son+Nhat+International+Airport">在 Google 地图打开送机路线 ↗</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ 关键提醒 ═══════ -->
+<section id="tips">
+  <div class="sec-head"><span class="no">记</span><h2>关键提醒</h2></div>
+  <p class="sec-desc">出发前必读</p>
+  <div class="remind-grid">
+    <div class="remind">
+      <h3>🚌 城市间交通</h3>
+      <p>9.30 VN0173 河内→岘港（14:35–16:00）；10.5 VN6037 岘港→胡志明（13:50–15:25），均越南航空已出票、含免费托运；岘港↔会安约 40 分钟车程；市内多用 Grab 打车，明码标价最稳妥。</p>
+    </div>
+    <div class="remind">
+      <h3>🛂 值机带护照原件</h3>
+      <p>两段均为越南航空国内线，外籍旅客值机多需柜台人工办理，务必携带护照原件（带越南入境章），订票姓名须与护照英文完全一致；经济舱含免费托运行李，提前 1.5–2 小时到机场。</p>
+    </div>
+    <div class="remind">
+      <h3>👛 胡志明逛街防扒</h3>
+      <p>滨城市场和范五老街人多，手机钱包不放外侧口袋；打车用 Grab，拦出租认准 Vinasun（白）/ Mai Linh（绿）。</p>
+    </div>
+    <div class="remind">
+      <h3>🌧️ 雨季随身带伞</h3>
+      <p>9 月底–10 月初越南中南部多午后短时阵雨，且正值中越台风季，会安古城 10 月偶有积水——随身带折叠伞和薄雨衣，给岘港/会安段留一个室内备案（SPA、博物馆、咖啡馆）。岘港、胡志明气温约 25–32°C。</p>
+    </div>
+    <div class="remind">
+      <h3>💵 现金与汇率</h3>
+      <p>1 元 ≈ 3300–3500 越南盾；景点门票多在 1–4 万盾，街边小店只收现金，市场购物备小额零钱。</p>
+    </div>
+    <div class="remind">
+      <h3>🏛️ 河内陵墓维护</h3>
+      <p>胡志明陵墓 2026/9/4–11/2 年度维护闭馆，仅外观参观；文庙等周一开放情况各来源不一，本行程已把文庙排周二。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><b>数据口径：</b>酒店订单（名称/日期/总价）来自预订截图；景点开放时间、演出场次以当日现场为准；步行与车程时间为估算。</p>
+  <p><b>适用前提：</b>各城行程以对应已订酒店为基地；两段国内航班均已订越南航空——VN0173（9.30 14:35 河内→岘港）、VN6037（10.5 13:50 岘港→胡志明），均含免费托运行李；订单号见航司 App。</p>
+  <p style="margin-top:10px">本页为行程参考，下单与出行以预订平台和现场实时信息为准。</p>
+</footer>
+
+<script>
+// 滚动高亮导航
+const links=[...document.querySelectorAll('nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const spy=()=>{let i=secs.findIndex(s=>s&&s.getBoundingClientRect().top>120);
+  if(i<0)i=secs.length;const cur=Math.max(0,i-1);
+  links.forEach((a,j)=>a.classList.toggle('active',j===cur));};
+document.addEventListener('scroll',spy,{passive:true});spy();
+</script>
+</body>
+</html>

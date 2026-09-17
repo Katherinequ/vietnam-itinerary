@@ -112,7 +112,13 @@ section{padding:56px 0 8px}
 /* ── Per-day map sidebar ── */
 .day-map{border-left:1px dashed var(--line);background:#fffdf8;padding:16px;display:flex;flex-direction:column;gap:10px}
 .day-map .map-title{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--ink-soft)}
-.day-map img{width:100%;flex:1;min-height:260px;object-fit:cover;border:1px solid var(--line);border-radius:12px;background:#e9e2d5;display:block}
+.day-map img{width:100%;flex:1;min-height:260px;object-fit:contain;border:1px solid var(--line);border-radius:12px;background:#f2ede3;display:block;cursor:zoom-in}
+.map-hint{font-size:11.5px;color:var(--ink-soft);text-align:center}
+.lb{position:fixed;inset:0;background:rgba(22,17,12,.93);display:none;align-items:center;justify-content:center;z-index:99;overflow:hidden}
+.lb.open{display:flex}
+.lb img{max-width:94vw;max-height:86vh;touch-action:none;cursor:grab;user-select:none;-webkit-user-drag:none;border-radius:10px;box-shadow:0 10px 50px rgba(0,0,0,.5)}
+.lb-close{position:absolute;top:16px;right:22px;color:#fff;font-size:36px;line-height:1;cursor:pointer;z-index:2;font-family:sans-serif}
+.lb-hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#ffffffa8;font-size:13px;pointer-events:none}
 .map-open{display:block;font-size:12.5px;font-weight:700;color:var(--accent);border:1.5px solid var(--accent);
   border-radius:999px;padding:6px 12px;text-align:center;transition:.15s}
 .map-open:hover{background:var(--accent);color:#fff}
@@ -282,6 +288,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d1.png" alt="D1 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Hanoi+Old+Quarter+Night+Market&waypoints=Hoan+Kiem+Lake&travelmode=walking">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -308,6 +315,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d2.png" alt="D2 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Thang+Long+Water+Puppet+Theatre&waypoints=Hanoi+Train+Street%7CTran+Quoc+Pagoda%7CHoa+Lo+Prison%7CBa+Dinh+Square">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
     <div class="tip">💡 火车街咖啡馆近年屡次被整治关停，若当天进不去，改为在街口远眺拍照 + 附近咖啡馆即可。</div>
@@ -335,6 +343,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d3.png" alt="D3 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Long+Bien+Bridge&waypoints=Temple+of+Literature+Hanoi%7CSt.+Joseph+Cathedral+Hanoi%7CVietnam+National+Museum+of+History">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -365,6 +374,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
           href="https://www.google.com/maps/dir/?api=1&origin=Embrace+Boutique+Hotel+Hanoi&destination=Noi+Bai+International+Airport">上午送机段：酒店 → 内排机场 ↗</a>
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Da+Nang+International+Airport&destination=My+Khe+Beach&waypoints=Fusion+Resort+Villas+Da+Nang">落地段：岘港机场 → Fusion → 美溪沙滩 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -396,6 +406,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d5.png" alt="D5 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Da+Nang+Cathedral&waypoints=Linh+Ung+Pagoda+Da+Nang%7CDragon+Bridge+Da+Nang">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -421,6 +432,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d6.png" alt="D6 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Sun+World+Ba+Na+Hills">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
     <div class="tip">🌧️ 山上比市区凉 5–8°C 且多雾，带件薄外套；门票 + 缆车联票约 90–100 万盾/人，建议提前网上购买（扫码入园免排队）：<a class="book" href="https://sunworld.vn/en/banahills" target="_blank" rel="noopener">官网 sunworld.vn</a> <a class="book" href="https://www.klook.com/zh-CN/activity/13283-ba-na-hills-ticket-da-nang/" target="_blank" rel="noopener">Klook 中文订票</a></div>
@@ -445,6 +457,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d7.png" alt="D7 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Dragon+Bridge+Da+Nang&waypoints=My+Khe+Beach">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
     <div class="tip">🌧️ 雨季备案：若遇午后阵雨，今天就是天然的"室内日"——SPA、酒店下午茶、岘港市区占族博物馆都可机动补位。</div>
@@ -481,6 +494,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d8.png" alt="D8 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Fusion+Resort+Villas+Da+Nang&destination=Hoi+An+Ancient+Town&waypoints=Hoi+An+TNT+Villa%7CBay+Mau+Coconut+Forest">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -512,6 +526,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
           href="https://www.google.com/maps/dir/?api=1&origin=Hoi+An+TNT+Villa&destination=Da+Nang+International+Airport">上午段：会安 → 岘港机场 ↗</a>
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Tan+Son+Nhat+International+Airport&destination=Nguyen+Hue+Walking+Street&waypoints=Ben+Thanh+Market">落地段：新山一机场 → 滨城市场 → 阮惠步行街 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
     <div class="tip amber">⏰ 注意：国内线外籍旅客需柜台人工值机，原计划 13:00 到机场只留 50 分钟太紧，已调整为 <b>11:00 退房、11:15 出发、约 12:00 到机场</b>。</div>
@@ -547,6 +562,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d10.png" alt="D10 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Saigon+Opera+House&waypoints=War+Remnants+Museum%7CSaigon+Central+Post+Office%7CHo+Chi+Minh+City+Museum+of+Fine+Arts%7CTan+Dinh+Church&travelmode=walking">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -571,6 +587,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d11.png" alt="D11 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Bitexco+Financial+Tower&waypoints=An+Dong+Market">在 Google 地图打开当日路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -591,6 +608,7 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
         <img loading="lazy" src="maps/d12.png" alt="D12 当日路线地图（数字按时间轴顺序标注）">
         <a class="map-open" target="_blank" rel="noopener"
           href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Tan+Son+Nhat+International+Airport">在 Google 地图打开送机路线 ↗</a>
+        <span class="map-hint">🔍 点击地图可放大拖拽</span>
       </aside>
     </div>
   </div>
@@ -636,6 +654,12 @@ footer{margin-top:64px;padding:34px 22px 48px;text-align:center;color:var(--ink-
   <p style="margin-top:10px">本页为行程参考，下单与出行以预订平台和现场实时信息为准。</p>
 </footer>
 
+<div class="lb" id="lb">
+  <span class="lb-close" id="lbClose">&times;</span>
+  <img id="lbImg" alt="路线大图">
+  <div class="lb-hint">双指捏合 / 滚轮缩放 · 拖拽移动 · 双击放大 · 点击空白处关闭</div>
+</div>
+
 <script>
 // 滚动高亮导航
 const links=[...document.querySelectorAll('nav a')];
@@ -644,6 +668,31 @@ const spy=()=>{let i=secs.findIndex(s=>s&&s.getBoundingClientRect().top>120);
   if(i<0)i=secs.length;const cur=Math.max(0,i-1);
   links.forEach((a,j)=>a.classList.toggle('active',j===cur));};
 document.addEventListener('scroll',spy,{passive:true});spy();
+</script>
+<script>
+// 路线大图：缩放 + 拖拽
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg');
+let scale=1,tx=0,ty=0;
+const apply=()=>lbImg.style.transform=`translate(${tx}px,${ty}px) scale(${scale})`;
+document.querySelectorAll('.day-map img').forEach(img=>{
+  img.addEventListener('click',()=>{lbImg.src=img.src;scale=1;tx=ty=0;apply();lb.classList.add('open');document.body.style.overflow='hidden';});
+});
+const lbClose=()=>{lb.classList.remove('open');document.body.style.overflow='';};
+document.getElementById('lbClose').onclick=lbClose;
+lb.addEventListener('click',e=>{if(e.target===lb)lbClose();});
+lb.addEventListener('wheel',e=>{e.preventDefault();const f=e.deltaY<0?1.18:1/1.18;scale=Math.min(6,Math.max(.5,scale*f));apply();},{passive:false});
+lbImg.addEventListener('dblclick',e=>{e.preventDefault();scale=scale>1.2?1:2.6;tx=ty=0;apply();});
+const pts=new Map();let lastDist=0;
+lbImg.addEventListener('pointerdown',e=>{e.preventDefault();lbImg.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});lbImg.style.cursor='grabbing';});
+lbImg.addEventListener('pointermove',e=>{
+  if(!pts.has(e.pointerId))return;
+  const prev=pts.get(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(pts.size===1){tx+=e.clientX-prev.x;ty+=e.clientY-prev.y;apply();}
+  else if(pts.size===2){const [a,b]=[...pts.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);
+    if(lastDist){scale=Math.min(6,Math.max(.5,scale*d/lastDist));apply();}lastDist=d;}
+});
+const lbUp=e=>{pts.delete(e.pointerId);lastDist=0;lbImg.style.cursor='grab';};
+lbImg.addEventListener('pointerup',lbUp);lbImg.addEventListener('pointercancel',lbUp);
 </script>
 </body>
 </html>
